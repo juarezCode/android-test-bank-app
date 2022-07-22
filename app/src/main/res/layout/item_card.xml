@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgCardState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_card_active" />
+
+    <TextView
+        android:id="@+id/txtCardStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="status"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toEndOf="@+id/imgCardState"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCardNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1234"
+        android:textColor="@color/card_back"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imgCardState"
+        app:layout_constraintTop_toBottomOf="@+id/txtCardStatus" />
+
+    <TextView
+        android:id="@+id/txtCardFullName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name LastName"
+        android:textColor="@color/card_back"
+        app:layout_constraintStart_toStartOf="@+id/txtCardNumber"
+        app:layout_constraintTop_toBottomOf="@+id/txtCardNumber" />
+
+    <TextView
+        android:id="@+id/txtCardIsTitular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="titular"
+        android:textColor="@color/card_back"
+        app:layout_constraintStart_toEndOf="@+id/imgCardState"
+        app:layout_constraintTop_toBottomOf="@+id/txtCardFullName" />
+
+    <TextView
+        android:id="@+id/txtCardAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="10000"
+        android:textColor="@color/card_back"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

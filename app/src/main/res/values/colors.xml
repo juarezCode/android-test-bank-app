@@ -10,4 +10,5 @@
     <color name="card_back">#01455C</color>
     <color name="text_color">#07BE92</color>
     <color name="text_color2">#0592BD</color>
+    <color name="card_view_shadow">#00000029</color>
 </resources>

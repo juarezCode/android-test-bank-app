@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnAddCard.setOnClickListener {
+        binding.txtAddCard.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeFragmentToAddCardFragment()
             it.findNavController().navigate(action)
         }

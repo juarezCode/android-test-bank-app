@@ -1,4 +1,4 @@
-package com.upax.testbankapp.home
+package com.upax.testbankapp.home.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

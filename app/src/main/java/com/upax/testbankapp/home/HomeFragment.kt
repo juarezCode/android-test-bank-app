@@ -4,11 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.upax.testbankapp.databinding.FragmentHomeBinding
+import com.upax.testbankapp.home.adapters.BalancesAdapter
+import com.upax.testbankapp.home.adapters.CardsAdapter
+import com.upax.testbankapp.home.adapters.MovementsAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -50,6 +54,7 @@ class HomeFragment : Fragment() {
             adapter = movementsAdapter
         }
 
+        binding.progressBar.isVisible = true
         viewModel.getAccount()
         viewModel.getBalances()
         viewModel.getCards()
@@ -75,6 +80,7 @@ class HomeFragment : Fragment() {
 
         viewModel.movements.observe(viewLifecycleOwner) { movements ->
             movementsAdapter.submitList(movements)
+            binding.progressBar.isVisible = false
         }
     }
 

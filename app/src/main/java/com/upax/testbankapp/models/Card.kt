@@ -19,3 +19,14 @@ data class Card(
     @SerializedName("tipo")
     val type: String,
 )
+
+data class NewCard(
+    val number: Int,
+    val account: String,
+    val issure: String,
+    val name: String,
+    val brand: String,
+    val status: String,
+    val balance: Int,
+    val type: String
+)

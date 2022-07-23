@@ -4,6 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.upax.testbankapp.models.Account
+import com.upax.testbankapp.models.Balance
+import com.upax.testbankapp.models.Card
+import com.upax.testbankapp.models.Movement
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -13,34 +17,34 @@ class HomeViewModel @Inject constructor(
     private val repository: AccountRepository
 ) : ViewModel() {
 
-    private var _account: MutableLiveData<Any> = MutableLiveData<Any>()
-    val account: LiveData<Any> get() = _account
-    private var _cards: MutableLiveData<Any> = MutableLiveData<Any>()
-    val cards: LiveData<Any> get() = _cards
-    private var _balances: MutableLiveData<Any> = MutableLiveData<Any>()
-    val balances: LiveData<Any> get() = _balances
-    private var _movements: MutableLiveData<Any> = MutableLiveData<Any>()
-    val movements: LiveData<Any> get() = _movements
+    private var _account: MutableLiveData<Account> = MutableLiveData<Account>()
+    val account: LiveData<Account> get() = _account
+    private var _cards: MutableLiveData<List<Card>> = MutableLiveData<List<Card>>()
+    val cards: LiveData<List<Card>> get() = _cards
+    private var _balances: MutableLiveData<List<Balance>> = MutableLiveData<List<Balance>>()
+    val balances: LiveData<List<Balance>> get() = _balances
+    private var _movements: MutableLiveData<List<Movement>> = MutableLiveData<List<Movement>>()
+    val movements: LiveData<List<Movement>> get() = _movements
 
-    suspend fun getAccount() {
+    fun getAccount() {
         viewModelScope.launch {
             _account.value = repository.getAccount()
         }
     }
 
-    suspend fun getCards() {
+    fun getCards() {
         viewModelScope.launch {
             _cards.value = repository.getCards()
         }
     }
 
-    suspend fun getBalances() {
+    fun getBalances() {
         viewModelScope.launch {
             _balances.value = repository.getBalances()
         }
     }
 
-    suspend fun getMovements() {
+    fun getMovements() {
         viewModelScope.launch {
             _movements.value = repository.getMovements()
         }

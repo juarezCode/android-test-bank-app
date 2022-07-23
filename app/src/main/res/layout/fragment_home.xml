@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/txtSessionDate"
+            android:id="@+id/txtLastSession"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="SessionDate"
@@ -41,13 +41,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerBalances"
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        tools:itemCount="1"
-        tools:listitem="@layout/item_balance"
+        android:layout_height="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_balance" />
 
     <TextView
         android:id="@+id/txtAddCard"
@@ -55,9 +55,10 @@
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
         android:paddingBottom="8dp"
-        android:text="Agregar una tarjeta de debito o credito"
+        android:text="+Agregar una tarjeta de debito o credito"
         android:textAlignment="center"
-        android:textColor="@color/card_back"
+        android:textColor="@color/link"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -66,12 +67,13 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerCards"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        tools:itemCount="1"
-        tools:listitem="@layout/item_card"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtAddCard"
-        tools:layout_editor_absoluteX="-16dp">
+        tools:itemCount="1"
+        tools:listitem="@layout/item_card">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -87,12 +89,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerCards">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerMovements"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:itemCount="2"
-            tools:listitem="@layout/item_movement" />
+            android:background="@color/card_view_shadow"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Movimientos Recientes"
+                android:textColor="@color/card_back"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerMovements"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_movement" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

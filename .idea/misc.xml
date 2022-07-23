@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/jjuareza/Documents/myworkspace/testbankap/app/src/main/res/drawable/ic_card_active.xml" value="0.154" />
+        <entry key="..\:/Users/jjuareza/Documents/myworkspace/testbankap/app/src/main/res/drawable/ic_card_inactive.xml" value="0.154" />
         <entry key="..\:/Users/jjuareza/Documents/myworkspace/testbankap/app/src/main/res/drawable/ic_grupo_14.xml" value="0.2595" />
         <entry key="..\:/Users/jjuareza/Documents/myworkspace/testbankap/app/src/main/res/layout/activity_main.xml" value="0.4590780809031044" />
         <entry key="..\:/Users/jjuareza/Documents/myworkspace/testbankap/app/src/main/res/layout/fragment_add_card.xml" value="0.264" />
